@@ -1,3 +1,16 @@
-<h1>
-  {{title}}
-</h1>
+<h1 class="text-center"><b>Movie List Application With <span style="color: #d43f3a;">Angular 4 + Firebase</span></b></h1>
+<hr>
+<div class="container">
+    <br>
+    <div class="col-md-6">
+        <div class="form-group">
+            <input type="text" id="name" class="form-control" placeholder="Movie name" (keyup.enter)="Send($event.target.value)" [(ngModel)]="mvVal" />
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let movie of movies | async">{{movie.movies}}</li>
+        </ul>
+    </div>
+</div>
